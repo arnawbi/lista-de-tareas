@@ -61,6 +61,21 @@ export default function Home() {
     }
   }
 
+  async function toggleComplete(id, completed) {
+    try {
+      const supabase = getSupabase();
+      const { error } = await supabase
+        .from("tasks")
+        .update({ completed: !completed })
+        .eq("id", id);
+
+      if (error) throw error;
+      loadTasks();
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
   return (
     <main>
       <h1>Mi lista de tareas</h1>
@@ -85,7 +100,16 @@ export default function Home() {
         <ul>
           {tasks.map((task) => (
             <li key={task.id}>
-              {task.title}
+              <button
+                className="bomb-btn"
+                onClick={() => toggleComplete(task.id, task.completed)}
+                aria-label={task.completed ? "Marcar como pendiente" : "Marcar como completada"}
+              >
+                {task.completed ? "💥" : "💣"}
+              </button>
+              <span className={task.completed ? "task-title done" : "task-title"}>
+                {task.title}
+              </span>
               <button onClick={() => deleteTask(task.id)}>Borrar</button>
             </li>
           ))}
