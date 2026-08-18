@@ -32,12 +32,17 @@ body {
 
 .float-item {
   position: absolute;
-  bottom: -10vh;
-  font-size: 2.4rem;
-  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.6));
+  bottom: -20vh;
+  width: 130px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid rgba(212, 175, 55, 0.8);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
   animation-name: floatUp;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  opacity: 0;
 }
 
 @keyframes floatUp {
@@ -46,13 +51,13 @@ body {
     opacity: 0;
   }
   10% {
-    opacity: 0.85;
+    opacity: 0.9;
   }
   90% {
-    opacity: 0.85;
+    opacity: 0.9;
   }
   100% {
-    transform: translateY(-115vh) rotate(360deg);
+    transform: translateY(-135vh) rotate(360deg);
     opacity: 0;
   }
 }
