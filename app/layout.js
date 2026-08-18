@@ -10,14 +10,54 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body>
         <div className="bg-decor" aria-hidden="true">
-          <span className="float-item i1">💰</span>
-          <span className="float-item i2">🏎️</span>
-          <span className="float-item i3">💎</span>
-          <span className="float-item i4">👑</span>
-          <span className="float-item i5">💵</span>
-          <span className="float-item i6">🏎️</span>
-          <span className="float-item i7">💰</span>
-          <span className="float-item i8">💎</span>
+          <img
+            className="float-item i1"
+            alt=""
+            src="https://loremflickr.com/240/160/lamborghini,supercar"
+            onError={(e) => { e.target.style.display = "none"; }}
+          />
+          <img
+            className="float-item i2"
+            alt=""
+            src="https://loremflickr.com/240/160/money,cash"
+            onError={(e) => { e.target.style.display = "none"; }}
+          />
+          <img
+            className="float-item i3"
+            alt=""
+            src="https://loremflickr.com/240/160/diamond,jewelry"
+            onError={(e) => { e.target.style.display = "none"; }}
+          />
+          <img
+            className="float-item i4"
+            alt=""
+            src="https://loremflickr.com/240/160/gold,luxury"
+            onError={(e) => { e.target.style.display = "none"; }}
+          />
+          <img
+            className="float-item i5"
+            alt=""
+            src="https://loremflickr.com/240/160/ferrari,sportscar"
+            onError={(e) => { e.target.style.display = "none"; }}
+          />
+          <img
+            className="float-item i6"
+            alt=""
+            src="https://loremflickr.com/240/160/yacht,luxury"
+            onError={(e) => { e.target.style.display = "none"; }}
+          />
+          <img
+            className="float-item i7"
+            alt=""
+            src="https://loremflickr.com/240/160/rolex,watch"
+            onError={(e) => { e.target.style.display = "none"; }}
+          />
+          <img
+            className="float-item i8"
+            alt=""
+            src="https://loremflickr.com/240/160/mansion,luxury"
+            onError={(e) => { e.target.style.display = "none"; }}
+          />
         </div>
         {children}
       </body>
